@@ -21,6 +21,22 @@ ENV MAVEN_HOME /usr/share/maven
 ENV MAVEN_CONFIG "/root/.m2"
 
 
+# install aws-cli
+RUN set -ex \
+  && apt-get update \
+  && apt-get install -y \
+  python-pip \
+  zip \
+  gpg \
+  git \
+  jq
+
+#install aws 2
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
+  unzip awscliv2.zip && \
+  ./aws/install && \
+  rm -rf awscliv2.zip
+
 # install node + yarn
 # copied from https://github.com/nodejs/docker-node/blob/master/6.11/stretch/Dockerfile
 RUN groupadd --gid 1000 node \
