@@ -1,12 +1,12 @@
      #   for PingAnA Project, Below is the version
-     #   <maven.version>3.0.0</maven.version>
+     #   <maven.version>3.6.3</maven.version>
      #   <java.version>1.8</java.version>
      #   <node.version>v8.9.4</node.version>
      #   <yarn.version>v1.3.2</yarn.version>
 
 FROM adoptopenjdk/openjdk8:jdk8u262-b10
 
-ARG MAVEN_VERSION="3.0.0"
+ARG MAVEN_VERSION="3.6.3"
 ARG NODE_VERSION="8.9.4"
 ARG YARN_VERSION="1.3.2"
 ARG DOCKER_MACHINE_VERSION="0.16.0"
